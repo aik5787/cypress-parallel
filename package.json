@@ -3,13 +3,11 @@
   "version": "1.0.0",
   "description": "cypress-parallel Demo Project",
   "main": "index.js",
+  "bin": {
+    "cypress-parallel": "./lib/cli.js"
+  },
   "scripts": {
-    "cy:open": "cypress open",
-    "cy:run": "cypress run --browser chrome --headless",
-    "cy:parallel": "node_modules/.bin/cypress-parallel -s cy:run -t 4 -d 'cypress/e2e/1/*.js'",
-    "cy:parallel:many": "node_modules/.bin/cypress-parallel -s cy:run -t 8 -d 'cypress/e2e/**/*.js'",
-    "serve-and-test:run": "start-server-and-test start http://localhost:3000 cy:run",
-    "serve-and-test:parallel": "start-server-and-test start http://localhost:3000 cy:parallel"
+    "cy:parallel": "node_modules/.bin/cypress-parallel -s cy:run -t 4 -d 'cypress/e2e/**/*.js'"
   },
   "repository": {
     "type": "git",
@@ -22,7 +20,6 @@
   },
   "homepage": "https://github.com/aik5787/cypress-parallel#readme",
   "dependencies": {
-    "cypress-parallel": "git+https://github.com/aik5787/cypress-parallel.git#fix-cli-output",
     "cypress": "^13.6.0",
     "cypress-multi-reporters": "^1.5.0",
     "is-npm": "5.0.0",
